@@ -5,21 +5,21 @@ int main()
     printf("Hello World\n");
    
     
-    int left = 0;
+    int left = 3;
     
-    int right = 3;
+    int right = 0;
     
-    int arm = 0;
+    int arm = 1;
     
-    int claw = 3;
+    int claw = 0;
     
     enable_servos();
     
-    set_servo_position(arm, 1069);
+    set_servo_position(arm, 223);
     
     msleep(1000);
     
-    set_servo_position(arm, 1945);
+    set_servo_position(arm, 1473);
     
     set_servo_position(claw, 1560);
     
@@ -34,13 +34,13 @@ int main()
     msleep(3000);
     
     
-    //turn
+    //turns towards the drawer
     
     motor(left,0);
     
-    motor(right,85);
+    motor(right,165); //150
     
-    msleep(785);
+    msleep(860);
     
     
     //forward
@@ -68,28 +68,25 @@ int main()
     msleep(500);
     
     
-    //backwards
+    //backwards (pulls the drawer)
     
     motor(left, -50);
    
     motor(right, -50);
     
-    msleep(450);
+    msleep(1000); //340
+    
+    //waits 
+    //motor(left,0);
+   // motor (right,0);
+   // msleep (1000);
     
     
-    //close claw
-   
-    set_servo_position(claw,2047);
-    
-    msleep(1000);
-    
-    
-    
-    //open claw
+    //open claw (let's go of drawer)
     
     set_servo_position(3,1000);
     
-    msleep(1000);
+    msleep(1100);
     
     
     
@@ -99,7 +96,7 @@ int main()
     
     motor(right,50);
     
-    msleep(500);
+    msleep(515);
     
     
     
@@ -111,11 +108,16 @@ int main()
     
      msleep(250);
     
+    //opem arm
+  
+    set_servo_position(claw,1330);
+    msleep(1000);
     
     
-    //raise arn
+     
+    //raise arm
     
-    set_servo_position(arm,1060);
+    set_servo_position(arm,1070);
     
     msleep(1000);
     
@@ -131,7 +133,7 @@ int main()
     
    //turn
     
-     motor(left,100);
+     motor(left,105);
     
      motor(right,0);
     
@@ -148,8 +150,7 @@ int main()
     msleep(500);
     
     
-    
-     //raise arn
+    //raise arn
     
     set_servo_position(arm,1800);
     
@@ -161,7 +162,7 @@ int main()
     
      motor(left,0);
     
-     motor(right,100);
+     motor(right,95);
     
      msleep(1000);
     
@@ -179,40 +180,30 @@ int main()
     
     //forward
     
-	motor(left,10);
+	motor(left,5);
     
-    motor(right,10);
+    motor(right,5);
     
-    msleep(650);
+    msleep(635);
     
     
      //turn
     
      motor(left,0);
     
-     motor(right,20);
+     motor(right,30);
     
-     msleep(1295);
-    
-    
-    
-    //backwards
-    
-    motor(left, -50);
-   
-    motor(right, -50);
-    
-    msleep(740);
-    
-    
+     msleep(1340);
     
     //forward
     
-    motor(left,75);
+    motor(left,30);
+   
+    motor(right,30);
     
-    motor(right,75);
+    msleep(1000);
     
-    msleep(925);
+ 
     
     																	
     return 0;
