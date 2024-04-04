@@ -19,7 +19,7 @@ int main()
 {
     printf("Hello World\n");
    
-    
+    //starting position is 2.5
     
     enable_servos();
     
@@ -27,7 +27,7 @@ int main()
     
     msleep(1000);
     
-    set_servo_position(arm, 1480);
+    set_servo_position(arm, 1450);
     
     set_servo_position(claw, 1560);
     
@@ -122,9 +122,9 @@ int main()
     //backwards
     drive(-1500,-1500,1000);
         
-    //closes claw
+    //opens claw (will remain this way until lightwitch)
    
-    set_servo_position(claw,2047);
+    set_servo_position(claw,1873);
     
     
    //turns towards light-switch 
@@ -137,7 +137,7 @@ int main()
     
     
     //forward
-    drive (1500,1500,2000);
+    drive (1500,1500,1800);
     
     //turns to face light-switch
     drive (0,1200,2000);
@@ -155,16 +155,16 @@ int main()
     msleep(635);
     
     //turn more
-    drive (0,450,500);
+    drive (0,450,300);
     
     //forward
-    drive (1500,1500,750);
+    drive (1500,1500,800);
     
     //stop
     drive (0,0,1000);
     
    //turn lightswitch up (raising arm)
-   set_servo_position(arm,450);
+    set_servo_position(arm,400);
     
     
     
